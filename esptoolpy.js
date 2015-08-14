@@ -1,22 +1,39 @@
-#!/usr/bin/env node
+var spawn = require('child_process').spawn;
 
-var program = require('commander');
-var ESP = require('./lib/index');
 
-program
-  .version('0.0.5')
-  .option('--read_mac [mode]', 'Read Mac Info')
-  .option('--flash_id [mode]', 'Read Flash ID')
-  .parse(process.argv);
+function read_mac (port, cb){
+  var command = spawn('python', ['lib/esptool.py', '-p', port, 'read_mac']);
 
-if (program.read_mac) {
-  ESP.read_mac(program.read_mac, function(result){
-    console.log(result.toString());
+  command.stdout.on('data', function (data) {
+    'use strict';
+    //console.log('stdout: ' + data);
+    cb(data);
+  });
+
+  command.stderr.on('data', function (data) {
+    'use strict';
+    //console.log('stderr: ' + data);
+    cb(data);
   });
 }
 
-if (program.flash_id) {
-  ESP.flash_id(program.flash_id, function(result){
-    console.log(result.toString());
+function flash_id (port, cb){
+  var command = spawn('python', ['lib/esptool.py', '-p', port, 'flash_id']);
+
+  command.stdout.on('data', function (data) {
+    'use strict';
+    //console.log('stdout: ' + data);
+    cb(data);
+  });
+
+  command.stderr.on('data', function (data) {
+    'use strict';
+    //console.log('stderr: ' + data);
+    cb(data);
   });
 }
+
+module.exports = {
+  read_mac :read_mac,
+  flash_id :flash_id
+};
