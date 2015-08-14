@@ -1,0 +1,44 @@
+{
+  "name": "esptoolpy-js",
+  "version": "0.0.1",
+  "description": "ESPTOOL.py port to node.js",
+  "homepage": "esptool.iot-works.com",
+  "repository": "phodal/esptoolpy-js",
+  "author": {
+    "name": "phodal",
+    "email": "h@phodal.com",
+    "url": "www.phodal.com"
+  },
+  "bin": {
+    "esptoolpy": "bin/esptoolpy.js"
+  },
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "keywords": [
+    "ESP",
+    "8266",
+    "ESPTOOL",
+    "esptool",
+    "py",
+    "flasher",
+    "iot"
+  ],
+  "devDependencies": {
+    "gulp": "^3.6.0",
+    "gulp-exclude-gitignore": "^1.0.0",
+    "gulp-istanbul": "^0.9.0",
+    "gulp-jscs": "^1.1.0",
+    "gulp-jshint": "^1.5.3",
+    "gulp-mocha": "^2.0.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-nsp": "^0.4.5",
+    "jshint-stylish": "^1.0.0"
+  },
+  "scripts": {
+    "prepublish": "gulp prepublish",
+    "test": "gulp"
+  },
+  "license": "MIT"
+}
