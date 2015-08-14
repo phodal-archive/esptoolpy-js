@@ -4,7 +4,7 @@ var program = require('commander');
 var ESP = require('./esptoolpy');
 
 program
-  .version('0.0.2')
+  .version('0.0.9')
   .option('--read_mac [mode]', 'Read Mac Info')
   .option('--flash_id [mode]', 'Read Flash ID')
   .parse(process.argv);
