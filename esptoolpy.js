@@ -2,7 +2,7 @@ var spawn = require('child_process').spawn;
 
 
 function read_mac (port, cb){
-  var command = spawn('python', ['lib/esptool.py', '-p', port, 'read_mac']);
+  var command = spawn('python', [__dirname + '/lib/esptool.py', '-p', port, 'read_mac']);
 
   command.stdout.on('data', function (data) {
     'use strict';
