@@ -1,6 +1,6 @@
 {
   "name": "esptoolpy-js",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "description": "ESPTOOL.py port to node.js",
   "homepage": "esptool.iot-works.com",
   "repository": "phodal/esptoolpy-js",
@@ -8,9 +8,6 @@
     "name": "phodal",
     "email": "h@phodal.com",
     "url": "www.phodal.com"
-  },
-  "bin": {
-    "esptoolpy": "./bin/esptoolpy.js"
   },
   "files": [
     "lib"
